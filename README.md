@@ -39,15 +39,32 @@ See [`.chezmoidata/packages.yaml`](.chezmoidata/packages.yaml) for the full list
 - **Fonts:** `font-jetbrains-mono-nerd-font`.
 - **Oh My Zsh plugins:** `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-completions`.
 
-## Updating
+## Usage
 
-After editing files in this repo:
+Edit a managed file:
 
 ```sh
+chezmoi edit ~/.zshrc
 chezmoi apply
 ```
 
-To pull remote changes and apply them:
+Start managing a new dotfile:
+
+```sh
+chezmoi add ~/.config/starship.toml
+```
+
+Add or remove a package: edit [`.chezmoidata/packages.yaml`](.chezmoidata/packages.yaml) and run `chezmoi apply`.
+
+Commit and push changes:
+
+```sh
+chezmoi cd
+git add -A && git commit -m "..." && git push
+exit
+```
+
+Pull changes made on another machine:
 
 ```sh
 chezmoi update
