@@ -1,0 +1,31 @@
+# Single source of truth for everything installed on the machine.
+# Edit this file and run `chezmoi apply` to reconcile.
+#
+# - brews:   Homebrew formulae (CLI tools).
+# - casks:   Homebrew casks (GUI apps and fonts).
+# - omz:     Oh My Zsh community plugins installed via `git clone`
+#            into $ZSH_CUSTOM/plugins. Built-in OMZ plugins
+#            (git, docker, etc.) are NOT listed here.
+
+packages:
+  brews:
+    - starship
+    - atuin
+    - zoxide
+    - fzf
+    - eza
+    - bat
+    - ripgrep
+    - tmux
+
+  casks:
+    - ghostty
+    - font-jetbrains-mono-nerd-font
+
+  omz:
+    - name: zsh-autosuggestions
+      url: https://github.com/zsh-users/zsh-autosuggestions
+    - name: zsh-syntax-highlighting
+      url: https://github.com/zsh-users/zsh-syntax-highlighting
+    - name: zsh-completions
+      url: https://github.com/zsh-users/zsh-completions
