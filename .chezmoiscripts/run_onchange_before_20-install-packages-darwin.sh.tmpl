@@ -6,7 +6,7 @@ echo "==> Installing packages from .chezmoidata/packages.yaml"
 
 # Generate a Brewfile on the fly from packages.yaml and pipe it to brew bundle.
 # Keeping the Brewfile in stdin keeps the source of truth in YAML.
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle install --file=- <<EOF
 {{- range .packages.brews }}
 brew "{{ . }}"
 {{- end }}
