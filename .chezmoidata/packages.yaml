@@ -9,6 +9,7 @@
 
 packages:
   brews:
+    - chezmoi
     - starship
     - atuin
     - zoxide
